@@ -1,7 +1,7 @@
 # def good_word(name):
 #     print( 'Ты лучший', name)
 
-from package1.module1 import hello
+from package1.module_1 import hello
 
 def good_word(name):  # отсюда получать
     hello(name)  # сюда передавать
