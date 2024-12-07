@@ -117,12 +117,22 @@ def good_word(name):
 «Main.py» расположён там не случайно. 
 Обычно в каждом проекте есть файл,
 который находится в корневой директории и служит входной точкой для программы.
-Давайте создадим такой файл и назовём его «main.py» (Рис. 15, Рис. 16).
+Давайте создадим такой файл и назовём его «main.py»'''
 
-Рис.15
+#  Трассировка (последний вызов был последним):
+#   Файл "G:\pyton\lesson_md_4_5\main.py", строка 1, в <модуле>
+#     из пакета1.пакет2.пакет3.модуль2 импортировать хорошее_слово
+#   Файл "G:\pyton\lesson_md_4_5\package1\package2\package3\module2.py", строка 4, в <модуле>
+#     из пакета1.модуль1 импортировать приветствие
+# ModuleNotFoundError: нет модуля с именем 'package1.module1'
 
-Рис.16
-Что мы сделаем? Мы укажем абсолютный путь. Нас интересует функция «good_word». Значит, мы берем «package1», затем «package2», затем «package3», откуда импортируем функцию «good_word» из «module2» (Рис. 17).
+# Traceback (most recent call last):
+#   File "G:\pyton\lesson_md_4_5\main.py", line 1, in <module>
+#     from package1.package2.package3.module2 import good_word
+#   File "G:\pyton\lesson_md_4_5\package1\package2\package3\module2.py", line 4, in <module>
+#     from package1.module1 import hello
+# ModuleNotFoundError: No module named 'package1.module1'
+'''Что мы сделаем? Мы укажем абсолютный путь. Нас интересует функция «good_word». Значит, мы берем «package1», затем «package2», затем «package3», откуда импортируем функцию «good_word» из «module2» (Рис. 17).
 
 Рис.17
 Далее создаем конструкцию «if __name__ == '__main__'» и вызываем функцию «good_word», передавая ей какое-то значение (Рис. 18, Рис. 19).
